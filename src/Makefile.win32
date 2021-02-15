@@ -1,0 +1,41 @@
+# Copyright (C) 2008 Mokrushin I.V. aka McMCC <mcmcc@mail.ru>
+# A simple USB Flash Programmer v.1.0.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+USBFLAGS = 
+USBLIBS = ./win32-libusb/libusb.a
+EXE_SUFFIX =.exe
+
+CC	= mingw32-gcc
+CFLAGS	= $(USBFLAGS) -O2 -Wall -I./win32-libusb -D_WINDOWS
+LIBS	= $(USBLIBS)
+OBJ	= programmer_cmd.o flash_cmd.o main.o config.o res.o
+
+PROGRAM = fuprog$(EXE_SUFFIX)
+
+all: $(PROGRAM)
+
+.c.o:
+	$(CC) $(CFLAGS) -c $<
+
+res.o:
+	mingw32-windres -i fuprog.rc -o res.o
+        
+$(PROGRAM): $(OBJ)
+	$(CC) -s -o $(PROGRAM) $(OBJ) $(LIBS)
+
+clean:
+	rm -f *.o $(PROGRAM) fuprog fuprog_x64

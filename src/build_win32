@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export PATH=/opt/mingw32-i386/bin:$PATH
+
+make -f Makefile.win32

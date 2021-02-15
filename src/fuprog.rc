@@ -1,0 +1,50 @@
+/* Copyright (C) 2008 Mokrushin I.V. aka McMCC <mcmcc@mail.ru>
+ * A simple Flash USB Programmer FUProg v.1.0.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ *
+ */
+
+#include <windows.h>
+#define fuprog  128
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1, 0, 0, 0
+ PRODUCTVERSION 1, 0, 0, 0
+ FILEOS VOS_NT_WINDOWS32
+ FILETYPE VFT_APP
+ FILESUBTYPE 0
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+   BLOCK "040904E4"
+   BEGIN
+    VALUE "FileDescription", "FUProg - Flash USB Programmer\0"
+    VALUE "OriginalFilename", "fuprog.exe\0"
+    VALUE "CompanyName", "-= (c) 2008 Igor Mokrushin aka McMCC =-\0"
+    VALUE "FileVersion", "1.0.0.0\0"
+    VALUE "InternalName", "fuprog\0"
+    VALUE "LegalCopyright", "Copyright (c) 2008 by McMCC, Moscow, Russia.\0"
+    VALUE "ProductName","FUProg v.1.0\0"
+    VALUE "ProductVersion","1.0.0.0\0"
+   END
+ END
+ BLOCK "VarFileInfo"
+ BEGIN
+  VALUE "Translation", 0x0409, 1252
+ END
+END
+
+fuprog ICON DISCARDABLE "fuprog.ico"
