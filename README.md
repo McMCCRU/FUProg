@@ -5,7 +5,8 @@ My old project based on AVR Atmega8.
 
 ![AVR Atmega8 based programmer](https://raw.githubusercontent.com/McMCCRU/FUProg/master/foto/fuprog.jpg)
 
-Supported ROM chips:
+**Supported ROM chips:**
+```
 --------------------------------------
 
 0001: AMD AM29F010 128Kx8      (128KB)
@@ -142,3 +143,4 @@ Supported ROM chips:
 0132: WINBOND W29C040 512Kx8   (512KB)
 
 --------------------------------------
+```
